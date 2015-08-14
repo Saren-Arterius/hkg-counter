@@ -95,7 +95,6 @@ server.get('/', getIP, checkReferer, function(req, res, next) {
       });
     });
   });
-
 }, singleton);
 
 server.listen(process.env.PORT || 2048, function() {
