@@ -4,7 +4,7 @@ var parse = require('url').parse;
 var redis = require("redis");
 var Canvas = require('canvas');
 
-var IMAGE_CACHE_TIME = 0;
+var IMAGE_CACHE_TIME = 1;
 
 var server = restify.createServer();
 server.use(restify.acceptParser(server.acceptable));
