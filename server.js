@@ -23,6 +23,10 @@ var getIP = function(req, res, next) {
 }
 
 var checkReferer = function(req, res, next) {
+  if (!("referer" in req.headers)) {
+    res.send(400, "Request has no referer");
+    return;
+  }
   var referer = parse(req.headers.referer, true);
   if (!referer.host || !referer.host.endsWith("hkgolden.com") || referer.pathname !== "/view.aspx") {
     res.send(400, "Invalid referer URL");
