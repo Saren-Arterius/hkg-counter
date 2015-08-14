@@ -1,0 +1,25 @@
+{
+  "name": "hkg-counter",
+  "version": "1.0.0",
+  "description": "HKGolden thread view counter",
+  "main": "server.js",
+  "dependencies": {
+    "memoizee": "^0.3.9",
+    "restify": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Saren",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saren-Arterius/hkg-counter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Saren-Arterius/hkg-counter/issues"
+  },
+  "homepage": "https://github.com/Saren-Arterius/hkg-counter#readme"
+}
