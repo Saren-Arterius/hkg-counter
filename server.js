@@ -23,17 +23,14 @@ var getIP = function(req, res, next) {
 }
 
 var checkReferer = function(req, res, next) {
-  if (!("referer" in req.headers)) {
-    req.headers.referer = "http://forum10.hkgolden.com/view.aspx?type=SW&message=5994913";
-  }
   var referer = parse(req.headers.referer, true);
   if (!referer.host || !referer.host.endsWith("hkgolden.com") || referer.pathname !== "/view.aspx") {
-    res.send(400);
+    res.send(400, "Invalid referer URL");
     return;
   }
   req.messageID = parseInt(referer.query.message);
   if (isNaN(req.messageID)) {
-    res.send(400);
+    res.send(400, "Invalid message ID");
     return;
   }
   req.ipListKey = "topic_ip_list_" + req.messageID;
